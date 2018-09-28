@@ -200,9 +200,18 @@ function mouseMoveHandler(e){
     }
 }
 
+function touchHandler(e){
+    var relativeX = e.clientX - canvas.offsetLeft;
+    if(relativeX > 0 && relativeX < canvas.width){
+        paddleX = relativeX - paddleWidth/2;
+    }
+}
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
+document.addEventListener("touchstart", touchHandler, false);
+document.addEventListener("touchmove", touchHandler, false);
+
 
 draw();
