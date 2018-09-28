@@ -90,7 +90,7 @@ function drawBricks(){
 function drawScore(){
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText("Score: "+score, 8, 20);
+    ctx.fillText("Ver.0.1 Score: "+score, 8, 20);
 }
 
 function drawLives(){
@@ -201,7 +201,8 @@ function mouseMoveHandler(e){
 }
 
 function touchHandler(e){
-    var relativeX = e.clientX - canvas.offsetLeft;
+    var touch = e.touches[0];
+    var relativeX = touch.pageX - canvas.offsetLeft;
     if(relativeX > 0 && relativeX < canvas.width){
         paddleX = relativeX - paddleWidth/2;
     }
@@ -210,7 +211,6 @@ function touchHandler(e){
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
-document.addEventListener("touchstart", touchHandler, false);
 document.addEventListener("touchmove", touchHandler, false);
 
 
