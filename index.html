@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop</title>
-    <style>
-    	* { padding: 0; margin: 0; }
-    	canvas { background: #eee; display: block; margin: 0 auto; }
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Who Is This</title>
+        <link rel="stylesheet" href="css/button.css">
+    </head>
+    <body>
+        <p class="title">WHO IS THIS?</p>
+        <p id="score">1/1</p>
+        <p class="image">
+            <img id="currentImg" src="img/ID0.png">
+        </p>
 
-<canvas id="myCanvas" width="480" height="320"></canvas>
-
-<script type="text/javascript" src="main.js"></script>
-
-</body>
+        <ul class="buttons">
+            <li><a href="#" class="cp_btn" id="answer1-button">
+                    <p id="answer1-text">answer1</p></a></li>
+            <li><a href="#" class="cp_btn" id="answer2-button">
+                    <p id="answer2-text">answer2</p></a></li>
+            <li><a href="#" class="cp_btn" id="answer3-button">
+                    <p id="answer3-text">answer3</p></a></li>
+        </ul>
+        <!-- <div id="answer1-button"><p id="answer1-text">answer1</p></div> -->
+        <!-- <div id="answer2-button"><p id="answer2-text">answer2</p></div> -->
+        <!-- <div id="answer3-button"><p id="answer3-text">answer3</p></div> -->
+        <script type="text/javascript" src="js/quiz.js"></script>
+    </body>
 </html>
+
