@@ -2,15 +2,21 @@
 var currentRobotID = 0;
 var answer1=0, answer2=0, answer3=0;
 var currentStep=0;
+var isEndGame=false;
 
 var QUIZ_MAX = 10;
 var ID_MAX = 15;
 
+
 function judge(id){
-    if(id == currentRobotID){
-        update();
+    if(isEndGame){
+        init();
     }else{
-        finish(true);
+        if(id == currentRobotID){
+            update();
+        }else{
+            finish(true);
+        }
     }
 }
 
@@ -34,8 +40,8 @@ function update(){
 
 function finish(isGameOver){
     if(isGameOver){
-        alert("GAME OVER \nThis robot is No." + currentRobotID);
-        init();
+        isEndGame = true;
+        endGame();
     }else{
         alert("GAME CLEAR \nYou are ﾛﾎﾞｶｯﾌﾟﾁｮｯﾄﾃﾞｷﾙ");
         init();
@@ -51,7 +57,16 @@ function init(){
     answer3 = answers[2];
     currentStep=1;
 
+    isEndGame = false;
+
     updateHTML();
+}
+
+function endGame(){
+    document.getElementById("answer1-text").innerHTML = "restart";
+    document.getElementById("answer2-text").innerHTML = "restart";
+    document.getElementById("answer3-text").innerHTML = "restart";
+    document.getElementById("score").innerHTML = "This robot is No."+currentRobotID;
 }
 
 function updateHTML(){
